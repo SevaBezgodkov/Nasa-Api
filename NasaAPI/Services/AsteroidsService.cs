@@ -23,8 +23,6 @@ namespace NasaAPI.Services
             var jsonObject = JObject.Parse(response);
             var jDate = jsonObject.Property("near_earth_objects");
 
-            var asteroidsCount = (int?)jsonObject["element_count"];
-
             var startDateConvert = DateTime.Parse(startDate);
             var endDateConvert = DateTime.Parse(endDate);
 
@@ -59,30 +57,6 @@ namespace NasaAPI.Services
                     }
                 }
             }
-
-            //(2021 AG6)
-            //459458 (2012 XR134)
-            //(2022 AV3) 19
-            //for (int i = 0; i < asteroidsCount; i++)
-            //{
-
-            //}
-            //352102 (2007 AG12)
-            //var nearEarthObjects = jsonObject?["near_earth_objects"];
-            //var asteroidName = nearEarthObjects?["name"];
-            //var asteroidId = nearEarthObjects?["id"];
-            //var jsonArray = new JsonArray(jsonObject);
-
-            ////get kilometers to Earth
-            //var approachData = jsonObject["close_approach_data"];
-            //var missDistance = approachData?[0]?["miss_distance"];
-            //var kilometersToEarth = missDistance["kilometers"];
-
-            //// isPotentiallyHazardousAsteroid
-            //var isPotentiallyHazardous = jsonObject["is_potentially_hazardous_asteroid"];
-
-            ////close_approach_date_
-            //var closeApproachDate = jsonObject["close_approach_date_full"];
         }
-    }//close_approach_data[miss_distance:kilometers]
+    }
 }
